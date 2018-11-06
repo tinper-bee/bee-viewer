@@ -1,3 +1,13 @@
+<a name="0.1.4"></a>
+## [0.1.4](https://github.com/tinper-bee/bee-viewer/compare/v0.1.3...v0.1.4) (2018-11-06)
+
+
+### Features
+
+* **bee-viewer:** 升级react ([fe5a744](https://github.com/tinper-bee/bee-viewer/commit/fe5a744))
+
+
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/tinper-bee/bee-viewer/compare/v0.1.2...v0.1.3) (2018-11-06)
 
