@@ -17,9 +17,11 @@ class Demo1 extends Component {
     }
     render () {
         return (
-            <Viewer shown={this.shown} hidden={this.hidden}>
-                <img id="image" src='http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-1-min.jpg' alt="Picture"/>
-            </Viewer>
+            <div className='demo'>
+                <Viewer shown={this.shown} hidden={this.hidden}>
+                    <img id="image" src='http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-1-min.jpg' alt="Picture"/>
+                </Viewer>
+            </div>
         )
     }
 }

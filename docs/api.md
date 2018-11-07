@@ -5,6 +5,7 @@
 
 |参数|说明|类型|默认值|
 |:---|:-----|:----|:------|
+|asyncLoad|图片是否异步加载|bool|false|
 |inline|启用 inline 模式|bool|false|
 |button|显示右上角关闭按钮|bool|true|
 |navbar|显示缩略图导航|bool|true|

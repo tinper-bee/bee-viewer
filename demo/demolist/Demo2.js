@@ -11,15 +11,18 @@ class Demo2 extends Component {
 
     render () {
         return (
-            <Viewer>
-                <div>
-                    <img data-original="http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-5-min.jpg" src='http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-1-min.jpg' alt="Picture"/>
-                    <img data-original="http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-4-min.jpg" src='http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-2-min.jpg' alt="Picture"/>
-                    <img data-original="http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-3-min.jpg" src='http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-3-min.jpg' alt="Picture"/>
-                    <img data-original="http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-2-min.jpg" src='http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-4-min.jpg' alt="Picture"/>
-                    <img data-original="http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-1-min.jpg" src='http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-5-min.jpg' alt="Picture"/>
-                </div>
-            </Viewer>
+            <div className='demo'>
+                <Viewer>
+                    <div>
+                        <img data-original="http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-5-min.jpg" src='http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-1-min.jpg' alt="Picture"/>
+                        <img data-original="http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-4-min.jpg" src='http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-2-min.jpg' alt="Picture"/>
+                        <img data-original="http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-3-min.jpg" src='http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-3-min.jpg' alt="Picture"/>
+                        <img data-original="http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-2-min.jpg" src='http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-4-min.jpg' alt="Picture"/>
+                        <img data-original="http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-1-min.jpg" src='http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-5-min.jpg' alt="Picture"/>
+                    </div>
+                </Viewer>
+            </div>
+            
         )
     }
 }

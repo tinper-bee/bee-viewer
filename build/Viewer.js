@@ -41,7 +41,8 @@ var propTypes = {
     view: _propTypes2["default"].func,
     viewed: _propTypes2["default"].func,
     zoom: _propTypes2["default"].func,
-    zoomed: _propTypes2["default"].func
+    zoomed: _propTypes2["default"].func,
+    asyncLoad: _propTypes2["default"].bool
 };
 var defaultProps = {
     ready: function ready() {},
@@ -52,7 +53,8 @@ var defaultProps = {
     view: function view() {},
     viewed: function viewed() {},
     zoom: function zoom() {},
-    zoomed: function zoomed() {}
+    zoomed: function zoomed() {},
+    asyncLoad: false
 };
 
 var Viewer = function (_Component) {
@@ -65,9 +67,23 @@ var Viewer = function (_Component) {
     }
 
     Viewer.prototype.componentDidMount = function componentDidMount() {
-        this.viewerCase = new _viewerjs2["default"](_reactDom2["default"].findDOMNode(this.refs.views), _extends({
-            url: 'data-original'
-        }, this.props));
+        if (!this.props.asyncLoad) {
+            this.viewerCase = new _viewerjs2["default"](_reactDom2["default"].findDOMNode(this.refs.views), _extends({
+                url: 'data-original'
+            }, this.props));
+        }
+    };
+
+    Viewer.prototype.componentDidUpdate = function componentDidUpdate() {
+        if (this.props.asyncLoad) {
+            if (this.viewerCase) {
+                this.viewerCase.update();
+            } else {
+                this.viewerCase = new _viewerjs2["default"](_reactDom2["default"].findDOMNode(this.refs.views), _extends({
+                    url: 'data-original'
+                }, this.props));
+            }
+        }
     };
 
     Viewer.prototype.componentWillUnmount = function componentWillUnmount() {
@@ -77,10 +93,8 @@ var Viewer = function (_Component) {
     Viewer.prototype.render = function render() {
         return _react2["default"].createElement(
             'div',
-            null,
-            _react2["default"].cloneElement(this.props.children, {
-                ref: 'views'
-            })
+            { ref: 'views' },
+            this.props.children
         );
     };
 

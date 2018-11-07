@@ -13,6 +13,7 @@ const propTypes = {
     viewed:PropTypes.func,
     zoom:PropTypes.func,
     zoomed:PropTypes.func,
+    asyncLoad:PropTypes.bool,
 };
 const defaultProps = {
     ready:()=>{},
@@ -23,7 +24,8 @@ const defaultProps = {
     view:()=>{},
     viewed:()=>{},
     zoom:()=>{},
-    zoomed:()=>{}
+    zoomed:()=>{},
+    asyncLoad:false
 };
 
 class Viewer extends Component {
@@ -32,22 +34,33 @@ class Viewer extends Component {
     }
 
     componentDidMount(){
-        this.viewerCase = new ViewerJs(ReactDOM.findDOMNode(this.refs.views),{
-            url: 'data-original',
-            ...this.props
-        })
+        if(!this.props.asyncLoad){
+            this.viewerCase = new ViewerJs(ReactDOM.findDOMNode(this.refs.views),{
+                url: 'data-original',
+                ...this.props
+            })
+        }
+        
+    }
+    componentDidUpdate(){
+        if(this.props.asyncLoad){
+            if(this.viewerCase){
+                this.viewerCase.update()
+            }else{
+                this.viewerCase = new ViewerJs(ReactDOM.findDOMNode(this.refs.views),{
+                    url: 'data-original',
+                    ...this.props
+                })
+            }
+        }        
     }
     componentWillUnmount(){
         this.viewerCase.destroy()
     }
     render () {
         return (
-            <div>
-                {
-                    React.cloneElement(this.props.children,{
-                        ref:'views'
-                    })
-                }
+            <div ref='views'>
+                {this.props.children}
             </div>
         )
     }
