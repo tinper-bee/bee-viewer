@@ -1,3 +1,13 @@
+<a name="0.1.5"></a>
+## [0.1.5](https://github.com/tinper-bee/bee-viewer/compare/v0.1.4...v0.1.5) (2018-11-07)
+
+
+### Features
+
+* **bee-viewer:** 图片异步加载 ([2b41f13](https://github.com/tinper-bee/bee-viewer/commit/2b41f13))
+
+
+
 <a name="0.1.4"></a>
 ## [0.1.4](https://github.com/tinper-bee/bee-viewer/compare/v0.1.3...v0.1.4) (2018-11-06)
 
